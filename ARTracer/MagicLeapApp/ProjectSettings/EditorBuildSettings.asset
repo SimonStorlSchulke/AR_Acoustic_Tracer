@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EmptyScene.unity
     guid: 102ec66d67b1d4913a8a47657c1e8982
-  - enabled: 1
+  - enabled: 0
     path: Assets/MagicLeap/Examples/Scenes/ImageTracking.unity
     guid: c4cc7b27d61667f419c09727a517e1a8
+  - enabled: 1
+    path: Assets/Scenes/Tracer.unity
+    guid: 0d3f1daa065d0294c8f22aa2f36fdd64
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2ba4dbd235ed941bb8fdb5a40ab00f22,
       type: 2}
