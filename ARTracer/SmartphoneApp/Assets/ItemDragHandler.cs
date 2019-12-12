@@ -16,6 +16,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = touchs.position;
+        transform.position = Input.mousePosition;
     }
 
 
