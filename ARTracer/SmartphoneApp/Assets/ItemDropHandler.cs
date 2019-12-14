@@ -10,6 +10,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
     Touch touchs;
     Vector3 touchposition;
     public GameObject MidAir;
+    public GameObject PlaceSoundSorce;
     ContentPositioningBehaviour MidAirScript;
 
     void Start()
@@ -42,6 +43,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
             Debug.Log("Drop item");
            // this.gameObject.SetActive(false);
             Instantiate(myPrefab, touchposition, new Quaternion(0,90,0,90));
+            PlaceSoundSorce.SetActive(false);
            
         }
     }

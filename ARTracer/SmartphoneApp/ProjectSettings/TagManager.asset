@@ -8,6 +8,8 @@ TagManager:
   - TouchObject
   - MidAir
   - Stage
+  - ReflectionScale
+  - ShowObjects
   layers:
   - Default
   - TransparentFX
