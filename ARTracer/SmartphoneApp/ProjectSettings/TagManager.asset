@@ -10,6 +10,9 @@ TagManager:
   - Stage
   - ReflectionScale
   - ShowObjects
+  - Button
+  - On
+  - Off
   layers:
   - Default
   - TransparentFX

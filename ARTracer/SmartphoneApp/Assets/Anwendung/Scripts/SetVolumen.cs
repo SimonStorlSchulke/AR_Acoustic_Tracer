@@ -7,6 +7,7 @@ public class SetVolumen : MonoBehaviour
 {
     public AudioSource Audio;
     Slider sliderv;
+    public Image VolumenImage;
 
      void Start()
     {
@@ -16,6 +17,7 @@ public class SetVolumen : MonoBehaviour
     public void SetVolum()
     {
         Audio.volume = sliderv.value;
+        VolumenImage.fillAmount = sliderv.value;
     }
 
 }

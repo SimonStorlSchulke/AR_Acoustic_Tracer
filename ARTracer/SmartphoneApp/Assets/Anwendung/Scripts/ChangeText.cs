@@ -9,7 +9,7 @@ public class ChangeText : MonoBehaviour
 
     public void OnButtonClick()
     {
-        if (OpenText.activeSelf == true)
+        if (CloseText.activeSelf == false)
         {
             OpenText.SetActive(false);
             CloseText.SetActive(true);

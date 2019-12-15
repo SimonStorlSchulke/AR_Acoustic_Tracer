@@ -12,6 +12,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
     public GameObject MidAir;
     public GameObject PlaceSoundSorce;
     ContentPositioningBehaviour MidAirScript;
+    public GameObject DeaktivateButton;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
            // this.gameObject.SetActive(false);
             Instantiate(myPrefab, touchposition, new Quaternion(0,90,0,90));
             PlaceSoundSorce.SetActive(false);
-           
+            DeaktivateButton.GetComponent<DeaktivateButton>().Deaktivate();
         }
     }
 }
