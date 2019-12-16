@@ -9,7 +9,10 @@ public class ButtonChanger : MonoBehaviour
     public List<GameObject> ButtonsOff = new List<GameObject>();
     public GameObject On;
     public GameObject Button2, Button3, Button4;
+    public GameObject Text3, Text4, Text5;
 
+    public GameObject ARTracer;
+    public GameObject Other;
 
     void Awake()
     {
@@ -42,7 +45,29 @@ public class ButtonChanger : MonoBehaviour
                 buttonoff.SetActive(true);
             }
 
-        
-        
-    }
+        if (Other.activeSelf == true)
+        {
+
+            Debug.Log("OOOON");
+            ARTracer.SetActive(true);
+            Other.SetActive(false);
+            Text3.SetActive(false);
+            Text4.SetActive(false);
+            Text5.SetActive(false);
+
+
+        }
+        else if (Other.activeSelf == false && ARTracer == true)
+        {
+
+            Other.SetActive(true);
+            ARTracer.SetActive(false);
+            Text3.SetActive(false);
+            Text4.SetActive(false);
+            Text5.SetActive(false);
+
+           
+        }
+       
+        }
 }
