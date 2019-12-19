@@ -1,5 +1,4 @@
-﻿namespace VRTK.Examples
-{
+﻿
     using UnityEngine;
     public class AutoRotation : MonoBehaviour
     {
@@ -21,4 +20,3 @@
             transform.Rotate(rotAxis, degPerSec * Time.deltaTime);
         }
     }
-}
