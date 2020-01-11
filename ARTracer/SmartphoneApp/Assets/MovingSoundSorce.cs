@@ -72,7 +72,7 @@ public class MovingSoundSorce : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
         // The GameObject this script attached should be on layer "Surface"
-        if (Physics.Raycast(ray, out hit, 30.0f, LayerMask.GetMask("Surface")))
+        if (Physics.Raycast(ray, out hit, 30.0f, LayerMask.GetMask("Swipe")))
         {
             transform.position = new Vector3(hit.point.x,
                                              hit.point.y,

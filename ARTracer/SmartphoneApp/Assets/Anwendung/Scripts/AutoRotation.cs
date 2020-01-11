@@ -22,29 +22,5 @@ public class AutoRotation : MonoBehaviour
     private void Update()
     {
         transform.Rotate(rotAxis, degPerSec * Time.deltaTime);
-        MoveVertical();
-    }
-    void MoveVertical()
-    {
-        var temp = transform.position;
-        print(up);
-        if (up == true)
-        {
-            temp.y += 0.0005f;
-            transform.position = temp;
-            if (transform.position.y >= 0.08f)
-            {
-                up = false;
-            }
-        }
-        if (up == false)
-        {
-            temp.y -= 0.001f;
-            transform.position = temp;
-            if (transform.position.y <= 0.02f)
-            {
-                up = true;
-            }
-        }
     }
 }
