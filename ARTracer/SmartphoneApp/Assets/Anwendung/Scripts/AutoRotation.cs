@@ -1,22 +1,50 @@
 ﻿
     using UnityEngine;
-    public class AutoRotation : MonoBehaviour
+public class AutoRotation : MonoBehaviour
+{
+    [Tooltip("Angular velocity in degrees per seconds")]
+    public float degPerSec = 60.0f;
+
+    [Tooltip("Rotation axis")]
+    public Vector3 rotAxis = Vector3.up;
+
+    bool up = true;
+
+    // Use this for initialization
+    private void Start()
     {
-        [Tooltip("Angular velocity in degrees per seconds")]
-        public float degPerSec = 60.0f;
+        rotAxis.Normalize();
+    }
 
-        [Tooltip("Rotation axis")]
-        public Vector3 rotAxis = Vector3.up;
 
-        // Use this for initialization
-        private void Start()
+
+    // Update is called once per frame
+    private void Update()
+    {
+        transform.Rotate(rotAxis, degPerSec * Time.deltaTime);
+        MoveVertical();
+    }
+    void MoveVertical()
+    {
+        var temp = transform.position;
+        print(up);
+        if (up == true)
         {
-            rotAxis.Normalize();
+            temp.y += 0.0005f;
+            transform.position = temp;
+            if (transform.position.y >= 0.08f)
+            {
+                up = false;
+            }
         }
-
-        // Update is called once per frame
-        private void Update()
+        if (up == false)
         {
-            transform.Rotate(rotAxis, degPerSec * Time.deltaTime);
+            temp.y -= 0.001f;
+            transform.position = temp;
+            if (transform.position.y <= 0.02f)
+            {
+                up = true;
+            }
         }
     }
+}

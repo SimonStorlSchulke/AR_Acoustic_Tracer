@@ -10,7 +10,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     void Update()
     {
         touchs = Input.GetTouch(0);
-
+       
     }
 
     public void OnDrag(PointerEventData eventData)

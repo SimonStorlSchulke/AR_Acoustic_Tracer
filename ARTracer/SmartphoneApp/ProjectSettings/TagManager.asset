@@ -13,6 +13,8 @@ TagManager:
   - Button
   - On
   - Off
+  - Clone
+  - PlaceObject
   layers:
   - Default
   - TransparentFX

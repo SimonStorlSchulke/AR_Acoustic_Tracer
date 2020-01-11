@@ -7,6 +7,9 @@ public class Destroythis : MonoBehaviour
     public GameObject Soundsorce;
    public void Delete()
     {
-        Destroy(Soundsorce);
+        Soundsorce.SetActive(false);
+        GameObject Clone = GameObject.FindGameObjectWithTag("Clone");
+        Clone.SetActive(false);
+        
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToogleParticle : MonoBehaviour
 {
-    public GameObject particle;
+   
     public GameObject Rotaion;
     public GameObject PlayButton;
 
@@ -24,12 +24,12 @@ public class ToogleParticle : MonoBehaviour
     {
         if (PlayButton.activeSelf == false)
         {
-            particle.SetActive(true);
+            
             Rotaion.GetComponent<AutoRotation>().enabled = true;
         }
         else
         {
-            particle.SetActive(false);
+            
             Rotaion.GetComponent<AutoRotation>().enabled = false;
         }
     }
