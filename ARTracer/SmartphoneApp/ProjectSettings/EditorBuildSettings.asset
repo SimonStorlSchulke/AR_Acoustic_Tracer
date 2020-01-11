@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Anwendung/Scenen/Tracer_Test.unity
+    path: Assets/Anwendung/Scenen/Test.unity
     guid: 25a44af0429e9cf40a1756b95b2ff28c
   - enabled: 1
-    path: Assets/Anwendung/Scenen/Tracer_Test2.unity
+    path: Assets/Anwendung/Scenen/AR_Tracer.unity
     guid: 6d6e2787631826b49974999a8451a2f1
   m_configObjects: {}
