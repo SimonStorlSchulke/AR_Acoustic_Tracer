@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Anwendung/Scenen/AR_Tracer.unity
     guid: 6d6e2787631826b49974999a8451a2f1
   - enabled: 1
+    path: Assets/Anwendung/Scenen/LoadingScreen.unity
+    guid: 308990a92af9fc24e9094d762dd2f3fc
+  - enabled: 1
     path: Assets/Anwendung/Scenen/AR_Tracer_New.unity
     guid: 82f762ae2577f984e84f833b1b91def6
   m_configObjects: {}
