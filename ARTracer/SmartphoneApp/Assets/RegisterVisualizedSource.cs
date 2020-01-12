@@ -3,7 +3,7 @@
 [RequireComponent (typeof (AudioSource))]
 public class RegisterVisualizedSource : MonoBehaviour
 {
-    void invoke()
+    void Awake()
     {
         Debug.Log("Registered AudioSource");
         visualizerPlane.speakerPos = this.transform;
