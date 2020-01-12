@@ -16,6 +16,7 @@ public class visualizerPlane : MonoBehaviour
     Material material;
     Texture2D tex;
     static float[] spectrum;
+    float amplitude = 0;
 
 
     void Start() {
@@ -26,23 +27,20 @@ public class visualizerPlane : MonoBehaviour
     }
 
     void Update() {
-        GetSpectrumData();
-        float amplitude = 0;
+        //calculate Amplitude based on spectrum data
+        if (Audio != null && Audio.isPlaying) Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
         foreach (float v in spectrum) amplitude += v;
         amplitude = amplitude / spectrum.Length * ampScale;
-        calcTexture(amplitude, speakerPos.position);
+
+        generateTexture(amplitude, speakerPos.position);
     }
 
-    void GetSpectrumData() {
-        if (Audio != null && Audio.isPlaying) {
-            Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
-        }
-    }
+ 
 
     Vector3 texPos;
     float distToSpeaker;
     Color col;
-    void calcTexture(float amplitude, Vector3 speakerPos) {
+    void generateTexture(float amplitude, Vector3 speakerPos) {
 
         speakerPos *= planeScale;
 
@@ -50,12 +48,14 @@ public class visualizerPlane : MonoBehaviour
         for (int x = 0; x < textureRes; x++) {
             for (int z = 0; z < textureRes; z++) {
 
+                //calculate current pixel position
                 texPos.y = this.transform.position.y;
                 texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
                 texPos.z = (z - (tex.height / 2)) * (2f / textureRes);
 
                 distToSpeaker = 1 - Vector3.Distance(speakerPos, texPos);
 
+                //colorize texture based on distance to speaker and current amplitude
                 col = heatmap.Evaluate(distToSpeaker * amplitude);
 
                 //Fade out texture for lower amplitude
