@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 5421942853125626379}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 0.0594137, y: 0.017803282, z: -0.037523627}
-  m_LocalScale: {x: 0.1917136, y: 0.191713, z: 0.1917136}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 462474580}
   - {fileID: 6523283376781347123}
@@ -238,6 +238,11 @@ MonoBehaviour:
   hold: {fileID: 6750542608332249888}
   release: {fileID: 8236518774281940372}
   place: {fileID: 7383397579482343982}
+  TransparentesMaterial: {fileID: 2100000, guid: 19c970f4850839e468d0b88443220c43,
+    type: 2}
+  TextTransparent: {fileID: 549542249337667829}
+  TextTransparent2: {fileID: 6708518179783122890}
+  TextTransparent3: {fileID: 1415051428380113748}
 --- !u!65 &1150466088
 BoxCollider:
   m_ObjectHideFlags: 0

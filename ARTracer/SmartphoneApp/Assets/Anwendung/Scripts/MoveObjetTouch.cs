@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoveObjetTouch : MonoBehaviour
 {
@@ -16,6 +17,14 @@ public class MoveObjetTouch : MonoBehaviour
     public Vector3 newPosition;
     public GameObject hold, release, place;
 
+
+    public Material TransparentesMaterial;
+    public TextMeshProUGUI TextTransparent, TextTransparent2, TextTransparent3;
+    Color NormaleFarbe;
+    public int i = 0;
+    Destroythis DestroyScript;
+    int neue;
+
     void Start()
     {
         holding = false;
@@ -23,10 +32,14 @@ public class MoveObjetTouch : MonoBehaviour
         SoundSorceMaterial = SoundSorce.GetComponent<Renderer>().material;
         SoundSorce.GetComponent<Renderer>().material = Normal;
         //Instantiate(PlaceSoundSorcePrefab, transform.position, new Quaternion(0, 90, 0, 90));
+        NormaleFarbe = TextTransparent.color;
     }
 
     void Update()
     {
+       
+       
+        
 
         if (holding)
         {
@@ -59,7 +72,7 @@ public class MoveObjetTouch : MonoBehaviour
                             hold.SetActive(false);
                             release.SetActive(true);
                             place.SetActive(false);
-
+                            
                         }
                     }
                 }
@@ -79,6 +92,7 @@ public class MoveObjetTouch : MonoBehaviour
                     hold.SetActive(false);
                     release.SetActive(false);
                     place.SetActive(true);
+                    Transparent();
 
                 }
                 
@@ -87,10 +101,16 @@ public class MoveObjetTouch : MonoBehaviour
                     transform.position = Position;
 
                 }
+                if (!GameObject.FindGameObjectWithTag("Swipe"))
+                {
+                    Normale();
+                }
             }
 
             
         }
+
+        
     }
 
     void Move()
@@ -109,6 +129,26 @@ public class MoveObjetTouch : MonoBehaviour
 
        
         
+    }
+
+    void Transparent()
+    {
+        TextTransparent.color = new Color(255, 255, 255, 130);
+        TextTransparent2.color = new Color(255, 255, 255, 130);
+        TextTransparent3.color = new Color(255, 255, 255, 130);
+        SoundSorce.GetComponent<Renderer>().material = TransparentesMaterial;
+    }
+
+    void Normale()
+    {
+        TextTransparent.color = NormaleFarbe;
+        TextTransparent2.color = NormaleFarbe;
+        TextTransparent3.color = NormaleFarbe;
+        SoundSorce.GetComponent<Renderer>().material = Normal;
+
+        hold.SetActive(true);
+        release.SetActive(false);
+        place.SetActive(false);
     }
 }
 
