@@ -28,11 +28,11 @@ public class visualizerPlane : MonoBehaviour
 
     void Update() {
         //calculate Amplitude based on spectrum data
-        if (Audio != null && Audio.isPlaying) Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
+        if (Audio && Audio.isPlaying) Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
         foreach (float v in spectrum) amplitude += v;
         amplitude = amplitude / spectrum.Length * ampScale;
 
-        generateTexture(amplitude, speakerPos.position);
+        generateTexture(amplitude);
     }
 
  
@@ -40,9 +40,9 @@ public class visualizerPlane : MonoBehaviour
     Vector3 texPos;
     float distToSpeaker;
     Color col;
-    void generateTexture(float amplitude, Vector3 speakerPos) {
+    void generateTexture(float amplitude) {
 
-        speakerPos *= planeScale;
+        Color amp0Color = heatmap.Evaluate(0); amp0Color.a = 0;
 
         //Texture Generation Loop
         for (int x = 0; x < textureRes; x++) {
@@ -53,14 +53,14 @@ public class visualizerPlane : MonoBehaviour
                 texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
                 texPos.z = (z - (tex.height / 2)) * (2f / textureRes);
 
-                distToSpeaker = 1 - Vector3.Distance(speakerPos, texPos);
-
-                //colorize texture based on distance to speaker and current amplitude
-                col = heatmap.Evaluate(distToSpeaker * amplitude);
-
-                //Fade out texture for lower amplitude
-                col.a = Mathf.Pow(distToSpeaker * amplitude, opacityFade);
-
+                if (speakerPos && Audio) {
+                    //colorize texture based on distance to speaker and current amplitude
+                    distToSpeaker = 1 - Vector3.Distance(speakerPos.position * planeScale, texPos);
+                    col = heatmap.Evaluate(distToSpeaker * amplitude);
+                    //Fade out texture for lower amplitude
+                    col.a = Mathf.Pow(distToSpeaker * amplitude, opacityFade);
+                } else col = amp0Color;
+                
                 tex.SetPixel(x, z, col);
             }
         }
