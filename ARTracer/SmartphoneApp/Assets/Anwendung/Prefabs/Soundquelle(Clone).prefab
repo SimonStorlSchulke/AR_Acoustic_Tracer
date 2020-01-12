@@ -1117,7 +1117,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Generic
 
-    sound sorce'
+    sound source'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d49e5af839a85b45b6732729f988858, type: 2}
   m_sharedMaterial: {fileID: 5467486266049109859, guid: 1d49e5af839a85b45b6732729f988858,
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5348992547238447078}
-    characterCount: 19
+    characterCount: 20
     spriteCount: 0
     spaceCount: 2
     wordCount: 3

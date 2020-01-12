@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &223430005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound sorce
+  m_text: Sound source
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d49e5af839a85b45b6732729f988858, type: 2}
   m_sharedMaterial: {fileID: 5467486266049109859, guid: 1d49e5af839a85b45b6732729f988858,
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 311462619}
-    characterCount: 11
+    characterCount: 12
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
