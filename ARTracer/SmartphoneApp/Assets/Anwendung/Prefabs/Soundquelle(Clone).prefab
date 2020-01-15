@@ -3241,9 +3241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Glow: {fileID: 2100000, guid: d1a91fa01139ee0408a0cba60ee25cee, type: 2}
-  Normal: {fileID: 2100000, guid: cd14c4338958921429f3645c002cad3e, type: 2}
-  SoundSorce: {fileID: 0}
-  SoundSorceMaterial: {fileID: 0}
+  Normal: {fileID: 2100000, guid: 7d459146e8fd1d648b252b3e592c72d2, type: 2}
+  SoundSorce: {fileID: 8719793875997782497}
+  SoundSorceMaterial: {fileID: 2100000, guid: 7d459146e8fd1d648b252b3e592c72d2, type: 2}
 --- !u!1 &7999795042119573793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,7 +4057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 7d459146e8fd1d648b252b3e592c72d2, type: 2}
-  EmissionColor: {r: 0, g: 1, b: 0.5272734, a: 0}
+  EmissionColor: {r: 0, g: 1, b: 0.5272734, a: 1}
   EmissionStrength: 1.5
   scaleMultiplyer: 0.3
 --- !u!1 &8789390394814035070

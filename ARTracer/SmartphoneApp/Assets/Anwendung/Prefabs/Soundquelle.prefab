@@ -226,9 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Glow: {fileID: 2100000, guid: d1a91fa01139ee0408a0cba60ee25cee, type: 2}
-  Normal: {fileID: 2100000, guid: cd14c4338958921429f3645c002cad3e, type: 2}
+  Normal: {fileID: 2100000, guid: 1eded95a3befc494f8def3afc6605ade, type: 2}
   SoundSorce: {fileID: 8261088367308710396}
-  SoundSorceMaterial: {fileID: 0}
+  SoundSorceMaterial: {fileID: 2100000, guid: 1eded95a3befc494f8def3afc6605ade, type: 2}
   Drop: 0
   PlaceSoundSorcePrefab: {fileID: 7999795042119573792, guid: b26358cf5d1bd604b9717d42f3a69711,
     type: 3}
@@ -238,7 +238,7 @@ MonoBehaviour:
   hold: {fileID: 6750542608332249888}
   release: {fileID: 8236518774281940372}
   place: {fileID: 7383397579482343982}
-  TransparentesMaterial: {fileID: 2100000, guid: 19c970f4850839e468d0b88443220c43,
+  TransparentesMaterial: {fileID: 2100000, guid: 7e959d5d7e4d05f4896b8d504b74c55c,
     type: 2}
   TextTransparent: {fileID: 549542249337667829}
   TextTransparent2: {fileID: 6708518179783122890}
@@ -809,37 +809,37 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.019
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14400001
+      value: 0.272
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.19999999
+      value: -0.131
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09254995
+      value: 0.09254996
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.3990025
+      value: 0.39900252
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22343546
+      value: -0.22343549
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.88448185
+      value: 0.8844819
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
@@ -864,18 +864,28 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6000006
+      value: 0.421032
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6000001
+      value: 0.421032
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6000005
+      value: 0.421032
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1eded95a3befc494f8def3afc6605ade, type: 2}
+    - target: {fileID: -1504981713932161579, guid: d4cce039f2ec0cb4e98c0e1d120a05e9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c140d9ff3fb2bb4a9a37608021bb830, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4cce039f2ec0cb4e98c0e1d120a05e9, type: 3}
 --- !u!1 &8261088367308710396 stripped
