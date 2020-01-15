@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4196407895402302021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 274.87143, y: 44.68315, z: 341.23743}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 3
-  ampScale: 35
+  ampScale: 50
   opacityFade: 0.75
   planeScale: 0.1
   textureRes: 32
