@@ -8,7 +8,7 @@ public class visualizerPlane : MonoBehaviour
     MovingSoundSorce source;
 
     [SerializeField]
-    float ampScale = 20, opacityFade = .75f, planeScale = 0.1f;
+    float ampScale = 20, opacityFade = .75f, planeScale = 10f;
 
     [SerializeField]
     int textureRes = 32, samples = 64;
@@ -22,17 +22,25 @@ public class visualizerPlane : MonoBehaviour
     void Start() {
         spectrum = new float[samples];
         tex = new Texture2D(textureRes, textureRes);
+        for (int x = 0; x < textureRes; x++) {
+            for (int z = 0; z < textureRes; z++) {
+                col = new Color(0, 0, 0, 0);
+                tex.SetPixel(x, z, col);
+            }
+        }
+        tex.Apply(false);
         material = GetComponent<Renderer>().material;
         material.SetTexture("_MainTex", tex);
     }
 
     void Update() {
         //calculate Amplitude based on spectrum data
-        if (Audio && Audio.isPlaying) Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
-        foreach (float v in spectrum) amplitude += v;
-        amplitude = amplitude / spectrum.Length * ampScale;
-
-        generateTexture(amplitude);
+        if (Audio != null && Audio.isPlaying) {
+            spectrum = Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
+            foreach (float v in spectrum) amplitude += v;
+            amplitude = amplitude / spectrum.Length * ampScale;
+            generateTexture(amplitude);
+        }
     }
 
  
@@ -41,7 +49,7 @@ public class visualizerPlane : MonoBehaviour
     float distToSpeaker;
     Color col;
     void generateTexture(float amplitude) {
-
+        Debug.Log(speakerPos.position);
         Color amp0Color = heatmap.Evaluate(0); amp0Color.a = 0;
 
         //Texture Generation Loop

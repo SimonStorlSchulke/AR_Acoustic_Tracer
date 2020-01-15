@@ -21,7 +21,7 @@ public class sourceVisuals : MonoBehaviour
     {
         mat.SetColor("_EmissionColor", EmissionColor * visualizerPlane.amplitude * EmissionStrength);
         mat.SetColor("_Color", new Color(0,0,0, visualizerPlane.amplitude * EmissionStrength));
-        Debug.Log(visualizerPlane.amplitude);
+        //Debug.Log(visualizerPlane.amplitude);
         scaleFac = 1 + visualizerPlane.amplitude * scaleMultiplyer;
         transform.localScale = scale * scaleFac;
     }
