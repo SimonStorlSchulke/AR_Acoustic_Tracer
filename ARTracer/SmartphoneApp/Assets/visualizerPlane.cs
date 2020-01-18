@@ -19,6 +19,7 @@ public class visualizerPlane : MonoBehaviour
     public static float amplitude = 0;
     [SerializeField]
     bool isVertical;
+    public static bool pixelated;
 
 
     void Start() {
@@ -35,7 +36,10 @@ public class visualizerPlane : MonoBehaviour
         material.SetTexture("_MainTex", tex);
     }
 
+
+
     void Update() {
+        tex.filterMode = pixelated ? FilterMode.Point : FilterMode.Bilinear;
         //calculate Amplitude based on spectrum data
         if (Audio != null && Audio.isPlaying) {
             spectrum = Audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
@@ -58,13 +62,12 @@ public class visualizerPlane : MonoBehaviour
         for (int x = 0; x < textureRes; x++) {
             for (int z = 0; z < textureRes; z++) {
 
+                //calculate current pixel position
                 if (isVertical) {
-                    //calculate current pixel position
-                    texPos.z = this.transform.position.y;
+                    texPos.z = this.transform.position.y; ;
                     texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
-                    texPos.y = (z - (tex.height / 2)) * (2f / textureRes);
+                    texPos.y = (z - (tex.height / 2)) * (2f / textureRes) + transform.position.y;
                 } else {
-                    //calculate current pixel position
                     texPos.y = this.transform.position.y;
                     texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
                     texPos.z = (z - (tex.height / 2)) * (2f / textureRes);

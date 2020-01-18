@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4196407895402302017}
   - component: {fileID: 4196407895402302016}
   - component: {fileID: 961136351}
+  - component: {fileID: 3078282996477881039}
   m_Layer: 0
   m_Name: visualizerPlane
   m_TagString: Untagged
@@ -125,3 +126,19 @@ MonoBehaviour:
   planeScale: 1
   textureRes: 32
   samples: 64
+  isVertical: 0
+  pixelated: 0
+--- !u!64 &3078282996477881039
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196407895402302021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
