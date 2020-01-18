@@ -17,6 +17,8 @@ public class visualizerPlane : MonoBehaviour
     Texture2D tex;
     static float[] spectrum;
     public static float amplitude = 0;
+    [SerializeField]
+    bool isVertical;
 
 
     void Start() {
@@ -56,10 +58,17 @@ public class visualizerPlane : MonoBehaviour
         for (int x = 0; x < textureRes; x++) {
             for (int z = 0; z < textureRes; z++) {
 
-                //calculate current pixel position
-                texPos.y = this.transform.position.y;
-                texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
-                texPos.z = (z - (tex.height / 2)) * (2f / textureRes);
+                if (isVertical) {
+                    //calculate current pixel position
+                    texPos.z = this.transform.position.y;
+                    texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
+                    texPos.y = (z - (tex.height / 2)) * (2f / textureRes);
+                } else {
+                    //calculate current pixel position
+                    texPos.y = this.transform.position.y;
+                    texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
+                    texPos.z = (z - (tex.height / 2)) * (2f / textureRes);
+                }
 
                 if (speakerPos && Audio) {
                     //colorize texture based on distance to speaker and current amplitude
