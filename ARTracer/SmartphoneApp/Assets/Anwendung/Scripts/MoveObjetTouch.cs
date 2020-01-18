@@ -25,6 +25,8 @@ public class MoveObjetTouch : MonoBehaviour
     Destroythis DestroyScript;
     int neue;
 
+    public GameObject Plane;
+
     void Start()
     {
         holding = false;
@@ -122,7 +124,7 @@ public class MoveObjetTouch : MonoBehaviour
         {
             newPosition = new Vector3(hit.point.x,
                                              hit.point.y,
-                                             transform.position.z);
+                                             Plane.transform.position.z);
             transform.position = newPosition;
 
         }

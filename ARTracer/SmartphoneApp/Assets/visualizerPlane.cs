@@ -19,7 +19,7 @@ public class visualizerPlane : MonoBehaviour
     public static float amplitude = 0;
     [SerializeField]
     bool isVertical;
-    public static bool pixelated;
+    public bool pixelated;
 
 
     void Start() {
