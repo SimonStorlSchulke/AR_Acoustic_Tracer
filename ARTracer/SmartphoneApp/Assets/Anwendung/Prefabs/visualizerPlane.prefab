@@ -122,6 +122,6 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   ampScale: 50
   opacityFade: 0.75
-  planeScale: 0.1
+  planeScale: 1
   textureRes: 32
   samples: 64
