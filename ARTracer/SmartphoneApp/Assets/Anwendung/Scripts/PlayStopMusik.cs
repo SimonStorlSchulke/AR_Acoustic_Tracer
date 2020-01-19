@@ -5,19 +5,27 @@ using UnityEngine;
 public class PlayStopMusik : MonoBehaviour
 {
     public GameObject AudioSource;
-    bool Musikon = false;
+    public bool Musikon = false;
+    int playes = 0;
     // Start is called before the first frame update
     public void PlayMusik()
     {
-        if (!Musikon)
+        if (!Musikon && playes == 0)
         {
-            AudioSource.SetActive(true);
+            AudioSource.SetActive(true);     
             Musikon = true;
+            playes = 1;
         }
 
-        else if (Musikon)
+        else if (!Musikon && playes == 1)
         {
-            AudioSource.SetActive(false);
+            Musikon = true;
+            AudioSource.GetComponent<AudioSource>().Play();
+        }
+
+        else if (Musikon && playes == 1)
+        {
+            AudioSource.GetComponent<AudioSource>().Pause();
             Musikon = false;
         }
     }

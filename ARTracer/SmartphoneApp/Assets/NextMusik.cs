@@ -9,6 +9,7 @@ public class NextMusik : MonoBehaviour
     public List<AudioClip> showObjects = new List<AudioClip>();
     public int i = 0;
     public int click = 1;
+    public GameObject PlayButton;
 
     // Start is called before the first frame update
    
@@ -16,7 +17,7 @@ public class NextMusik : MonoBehaviour
 
     public void Next()
     {
-        
+
         if (click < showObjects.Count)
         {
             ++i;
@@ -27,9 +28,17 @@ public class NextMusik : MonoBehaviour
             i = 0;
             click = 1;
         }
-
-        Audio.clip = showObjects[i];
-        Audio.Play();
+       
+            Audio.clip = showObjects[i];
+            PlayMusik();
+       
     }
-
+    public void PlayMusik()
+    {
+        if (PlayButton.GetComponent<PlayStopMusik>().Musikon == true)
+        {
+       
+            Audio.Play();
+        }
+    }
 }

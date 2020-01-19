@@ -7,6 +7,7 @@ public class BackMusik : MonoBehaviour
     public AudioSource Audio;
     public NextMusik NextMusik;
     public GameObject NextButton;
+    public GameObject PlayButton;
 
     // Start is called before the first frame update
 
@@ -34,6 +35,17 @@ public class BackMusik : MonoBehaviour
 
 
         Audio.clip = NextMusik.showObjects[NextMusik.i];
-        Audio.Play();
+        PlayMusik();
+
     }
+    public void PlayMusik()
+    {
+        if (PlayButton.GetComponent<PlayStopMusik>().Musikon == true)
+        {
+
+            Audio.Play();
+        }
+    }
+
 }
+

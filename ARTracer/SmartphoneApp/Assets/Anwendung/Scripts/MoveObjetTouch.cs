@@ -112,7 +112,11 @@ public class MoveObjetTouch : MonoBehaviour
             
         }
 
-        
+        if (!GameObject.FindGameObjectWithTag("Swipe"))
+        {
+            Normale();
+        }
+
     }
 
     void Move()

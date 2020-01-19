@@ -9,6 +9,7 @@ public class Toggle_Buttons : MonoBehaviour
     
     public void OnButtonClick()
     {
+
         if(isShow == false)
         {
             for (int i = 0; i < toggleObjects.Length; i++)
@@ -27,5 +28,10 @@ public class Toggle_Buttons : MonoBehaviour
 
             isShow = false;
         }
+    }
+
+    public void Show()
+    {
+        isShow = false;
     }
 }

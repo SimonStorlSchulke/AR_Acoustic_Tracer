@@ -3,14 +3,16 @@
 public class SwipeLogger : MonoBehaviour
 {
     public GameObject one, two, drei;
-    public visualizerPlane plane;
+    public visualizerPlane plane, plane2;
     public Gradient newG;
-    public Gradient planeG;
+    public Gradient planeG, planeG2;
     private void Awake()
     {
         SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
         plane = GameObject.Find("visualizerPlane").GetComponent<visualizerPlane>();
         planeG = GameObject.Find("visualizerPlane").GetComponent<visualizerPlane>().heatmap;
+        plane2 = GameObject.Find("visualizerPlaneVertical").GetComponent<visualizerPlane>();
+        planeG2 = GameObject.Find("visualizerPlaneVertical").GetComponent<visualizerPlane>().heatmap;
     }
 
     public void SwipeDetector_OnSwipe(SwipeData data)
@@ -31,6 +33,8 @@ public class SwipeLogger : MonoBehaviour
                         drei.SetActive(false);
                         plane.pixelated = true;
                         plane.heatmap = planeG;
+                        plane2.pixelated = true;
+                        plane2.heatmap = planeG2;
                     }
 
                     else if (two.activeSelf == true)
@@ -41,6 +45,8 @@ public class SwipeLogger : MonoBehaviour
 
                         plane.pixelated = false;
                         plane.heatmap = newG;
+                        plane2.pixelated = false;
+                        plane2.heatmap = newG;
                     }
 
                     else if (drei.activeSelf == true)
@@ -50,6 +56,8 @@ public class SwipeLogger : MonoBehaviour
                         drei.SetActive(false);
                         plane.pixelated = false;
                         plane.heatmap = planeG;
+                        plane2.pixelated = false;
+                        plane2.heatmap = planeG2;
                     }
                 }
             }

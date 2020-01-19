@@ -8,7 +8,7 @@ public class visualizerPlane : MonoBehaviour
     MovingSoundSorce source;
 
     [SerializeField]
-    float ampScale = 20, opacityFade = .75f, planeScale = 10f;
+    float ampScale = 20, opacityFade = .75f, planeScale = 3f;
 
     [SerializeField]
     int textureRes = 32, samples = 64;
