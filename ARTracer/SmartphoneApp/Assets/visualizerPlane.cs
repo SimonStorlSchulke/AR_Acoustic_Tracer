@@ -20,7 +20,7 @@ public class visualizerPlane : MonoBehaviour
     [SerializeField]
     bool isVertical;
     public bool pixelated;
-
+    public float t = 3;
 
     void Start() {
         spectrum = new float[samples];
@@ -62,20 +62,22 @@ public class visualizerPlane : MonoBehaviour
         for (int x = 0; x < textureRes; x++) {
             for (int z = 0; z < textureRes; z++) {
 
+                
                 //calculate current pixel position
                 if (isVertical) {
                     texPos.z = this.transform.position.y; ;
-                    texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
-                    texPos.y = (z - (tex.height / 2)) * (2f / textureRes) + transform.position.y;
+                    texPos.x = (x - (tex.width / 2)) * (2f / textureRes) / planeScale + (transform.position.x);
+                    texPos.y = (z - (tex.height / 2)) * (2f / textureRes) / planeScale + (transform.position.y);
                 } else {
                     texPos.y = this.transform.position.y;
-                    texPos.x = (x - (tex.width / 2)) * (2f / textureRes);
-                    texPos.z = (z - (tex.height / 2)) * (2f / textureRes);
+                    texPos.x = (x - (tex.width / 2)) * (2f / textureRes)/planeScale + (transform.position.x);
+                    texPos.z = (z - (tex.height / 2)) * (2f / textureRes)/planeScale + (transform.position.z);
                 }
+                
 
                 if (speakerPos && Audio) {
                     //colorize texture based on distance to speaker and current amplitude
-                    distToSpeaker = 1 - Vector3.Distance(speakerPos.position * planeScale, texPos);
+                    distToSpeaker = 1 - Vector3.Distance(speakerPos.position, texPos);
                     col = heatmap.Evaluate(distToSpeaker * amplitude);
                     //Fade out texture for lower amplitude
                     col.a = Mathf.Pow(distToSpeaker * amplitude, opacityFade);
